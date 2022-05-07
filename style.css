@@ -1,0 +1,78 @@
+*{  /*アスタリスクは全部に影響を与える*/
+    box-sizing:content-box;
+
+}
+
+img{
+  width: auto;
+  max-height: 100%;
+}
+body{
+    margin: 0; /*ヘッダー上部の空白を埋めるため*/
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: rgba(240, 255, 252, 0.534);
+}
+
+header{
+    height:fit-content;
+    width: 100%; /*100%で横一杯*/
+    padding: 0px 30px;
+    background-color: rgba(0, 0, 0, 0.511) ;
+    position:fixed;
+    display:flexbox;
+}
+
+.logo{
+    font-size: 60px; /*ユゲ塾ロゴ*/
+    position:relative;
+    left: 100px;  
+}
+
+.list_menu{
+    display:flex; /*これで横並びに*/
+    list-style:none;
+    padding: 0;
+    margin: 0;
+}
+
+   a{ color:black;
+    text-decoration: none;
+    display: block;
+    line-height: 60px;
+    padding: 0 20px;
+}
+
+@media (max-width: 500px){ /*５００px以下でlist_menuが消える*/
+    .list_menu {
+        display: none;
+    }
+      .hamburger{  /*５００px以下でハンバーガーメニュー表示*/
+        --icon-size:70px;
+        border:5px solid black;
+        border-radius:5px;
+        width: 70px;
+        height:70px;
+        position:relative;
+      }
+      .hamburger > *{
+        position:relative;
+        left:50%;
+        transform:translate(-50%,-50%);
+        display:block;
+        width:50%;
+        height:3px;
+        background-color:black;
+      }
+      .hamburger > *:nth-of-type(1){
+        top:32%
+      }
+      .hamburger > *:nth-of-type(2){
+        top:50%
+      }
+      .hamburger > *:nth-of-type(3){
+        top:68%
+      }
+}
+
+
+
